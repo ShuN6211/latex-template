@@ -3,9 +3,14 @@
     "[latex]": {
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "James-Yu.latex-workshop",
+        "editor.wordWrap": "bounded",
+        "editor.wordWrapColumn": 80,
     },
     // -------------------- latex-workshop --------------------
     // for build
+    "latex-workshop.intellisense.package.enabled": true,
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.view.pdf.zoom": "page-width",
     "latex-workshop.latexindent.path": "/opt/homebrew/bin/latexindent",
     "latex-workshop.latex.outDir": "./out",
     "latex-workshop.latex.autoBuild.run": "never",
