@@ -16,7 +16,7 @@ This repo provide my latex document template files and settings working on
 - [LaTexWorkShop](https://github.com/James-Yu/LaTeX-Workshop)
 - [latexindent](https://formulae.brew.sh/formula/latexindent)
   - I recommend to install latexindent via homebrew because the one provided by mactex needs specific version of
-    perl. Resolve the dependency by oneself is a little tedious.
+    perl. Resolving the dependency by oneself is a little tedious.
 
   ```shell
   brew install latexindent
