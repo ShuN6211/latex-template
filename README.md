@@ -20,3 +20,9 @@ This repo provide my latex document template files and settings working on
   ```shell
   brew install latexindent
   ```
+
+- The path to the above `latexindent` installed via homebrew is configured in settings.json.
+
+```json
+"latex-workshop.latexindent.path": "/opt/homebrew/bin/latexindent",
+```

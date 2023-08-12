@@ -7,14 +7,20 @@
         "editor.wordWrapColumn": 80,
     },
     // -------------------- latex-workshop --------------------
-    // for build
+    // intellisense
     "latex-workshop.intellisense.package.enabled": true,
+    // viewer
     "latex-workshop.view.pdf.viewer": "tab",
     "latex-workshop.view.pdf.zoom": "page-width",
+    // format and lint
     "latex-workshop.latexindent.path": "/opt/homebrew/bin/latexindent",
+    "latex-workshop.linting.chktex.enabled": true,
+    "latex-workshop.linting.lacheck.enabled": true,
+    // build
     "latex-workshop.latex.outDir": "./out",
     "latex-workshop.latex.autoBuild.run": "never",
     "latex-workshop.latex.autoClean.run": "onBuilt",
+    // tools
     "latex-workshop.latex.tools": [
         {
             "name": "lualatexmk",
@@ -59,6 +65,7 @@
             "env": {}
         },
     ],
+    // recipes
     "latex-workshop.latex.recipes": [
         {
             "name": "latexmk (lualatex)",
