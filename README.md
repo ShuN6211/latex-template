@@ -8,7 +8,6 @@ This repo provide my latex document template files and settings working on
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [TeXShop](https://texwiki.texjp.org/?TeXShop)
   - In case of OSX, you can get via homebrew. Note that following command takes long time.
-    All you can do is to wait!!  
 
   ```shell
       brew install --cask mactex-no-gui
