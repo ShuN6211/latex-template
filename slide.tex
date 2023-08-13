@@ -1,0 +1,89 @@
+\documentclass[dvipdfmx,11pt]{beamer}
+\setbeamertemplate{frametitle continuation}[from second][]
+\usepackage{bxdpx-beamer}
+\usepackage{pxjahyper}
+\usepackage{minijs}
+\usefonttheme{professionalfonts}
+\usepackage{amsmath,amssymb,nccmath}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage{here}
+\usepackage{ascmac}
+\usepackage{mathrsfs}
+\usepackage[absolute,overlay]{textpos}
+\usepackage {capt-of} 
+\usepackage{color}
+\setbeamertemplate{caption}[numbered]
+\usepackage{braket}
+\usepackage{caption}
+\captionsetup[figure]{font=scriptsize,labelfont=scriptsize}
+\setbeamertemplate{footline}[frame number]
+\usepackage{appendixnumberbeamer}
+\usepackage{color}
+\definecolor{myblue}{rgb}{0.2,0.2,0.7}
+
+\renewcommand{\figurename}{図}
+\renewcommand{\kanjifamilydefault}{\gtdefault}
+\usetheme[    
+    block=fill, % ブロックに背景をつける
+    progressbar=foot, % 各スライドの下にプログレスバー
+    numbering=fraction % 合計ページ数を表示
+]{metropolis}
+
+\title{クリーンな２次元超伝導体における量子渦にかかる力の微視的理論}
+\subtitle{Microscopic theory of force on quantum vortex in two-dimensional clean superconductors}
+\author{牧野 舜}
+\institute{Hoge University}
+\date{}
+
+\begin{document}
+\begin{frame}\frametitle{}
+    \titlepage
+\end{frame}
+
+\AtBeginSection[]
+{
+    \begin{frame}
+        \frametitle{Outline}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
+
+\section{超伝導と量子渦}
+\begin{frame}
+    \frametitle{背景知識：超伝導と量子渦}
+
+    \begin{itemize}
+        \item
+              第I種超伝導体:完全反磁性(マイスナー状態)
+        \item
+              第II種超伝導体:混合状態では,量子渦(vortex)が現れ,量子化された磁束の侵入を許す.
+    \end{itemize}
+\end{frame}
+
+\section{磁束の量子化}
+\begin{frame}
+    \frametitle{背景知識：超伝導と量子渦}
+
+    \begin{itemize}
+        \item
+              波動関数 $\Psi(r,\theta)=\Psi_{0}(r)e^{-i\theta}$の一価性から磁束は量子化される.
+
+              \begin{equation}
+                  \int_{S} \bm{B}\cdot\mathrm{d}\bm{S} = \frac{h}{2e}n \ \ (n=0,\pm1,\dots) \notag
+              \end{equation}
+    \end{itemize}
+\end{frame}
+
+\section{まとめ}
+\begin{frame}
+    \frametitle{まとめ}
+
+    \begin{itemize}
+        \item まとめ
+    \end{itemize}
+\end{frame}
+
+\end{document}
+
