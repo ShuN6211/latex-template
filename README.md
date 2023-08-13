@@ -12,7 +12,6 @@ This repo provide my latex document template files and settings working on
   ```shell
       brew install --cask mactex-no-gui
       sudo tlmgr update --self --all
-      sudo tlmgr paper a4  
   ```
   See also https://texwiki.texjp.org/?TeX%20Live%2FMac#texlive-install-pacman
 
