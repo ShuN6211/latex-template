@@ -13,7 +13,8 @@ This repo provide my latex document template files and settings working on
       brew install --cask mactex-no-gui
       sudo tlmgr update --self --all
   ```
-  See also https://texwiki.texjp.org/?TeX%20Live%2FMac#texlive-install-pacman
+
+  See also <https://texwiki.texjp.org/?TeX%20Live%2FMac#texlive-install-pacman>
 
 - [LaTexWorkShop](https://github.com/James-Yu/LaTeX-Workshop)
 - [latexindent](https://formulae.brew.sh/formula/latexindent)
