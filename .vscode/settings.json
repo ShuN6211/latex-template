@@ -14,12 +14,23 @@
     "latex-workshop.view.pdf.zoom": "page-width",
     // format and lint
     "latex-workshop.latexindent.path": "/opt/homebrew/bin/latexindent",
+    "latex-workshop.latexindent.args": [
+        "%TMPFILE%",
+        "-c=%DIR%/",
+        "-y=defaultIndent: '%INDENT%'"
+    ],
     "latex-workshop.linting.chktex.enabled": true,
     "latex-workshop.linting.lacheck.enabled": true,
     // build
     "latex-workshop.latex.outDir": "./out",
     "latex-workshop.latex.autoBuild.run": "never",
-    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "latex-workshop.latex.autoClean.run": "onFailed",
+    "latex-workshop.latex.clean.method": "command",
+    "latex-workshop.latex.clean.command": "latexmk",
+    "latex-workshop.latex.clean.args": [
+        "-c",
+        "%TEX%"
+    ],
     // tools
     "latex-workshop.latex.tools": [
         {
