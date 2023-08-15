@@ -1,38 +1,31 @@
-\documentclass[dvipdfmx,11pt]{beamer}
-\setbeamertemplate{frametitle continuation}[from second][]
+\documentclass[dvipdfmx,12pt]{beamer}
+% 日本語向けの設定
 \usepackage{bxdpx-beamer}
 \usepackage{pxjahyper}
 \usepackage{minijs}
-\usefonttheme{professionalfonts}
+% 数式
 \usepackage{amsmath,amssymb,nccmath}
 \usepackage{bm}
-\usepackage{graphicx}
-\usepackage{comment}
-\usepackage{here}
-\usepackage{ascmac}
 \usepackage{mathrsfs}
-\usepackage[absolute,overlay]{textpos}
-\usepackage {capt-of} 
-\usepackage{color}
-\setbeamertemplate{caption}[numbered]
 \usepackage{braket}
-\usepackage{caption}
-\captionsetup[figure]{font=scriptsize,labelfont=scriptsize}
-\setbeamertemplate{footline}[frame number]
-\usepackage{appendixnumberbeamer}
-\usepackage{color}
-\definecolor{myblue}{rgb}{0.2,0.2,0.7}
+% その他
+\usepackage{graphicx}
+\usepackage{appendixnumberbeamer} % appendixのスライドにはページ番号をつけない.
+\usepackage{color} 
 
 \renewcommand{\figurename}{図}
-\renewcommand{\kanjifamilydefault}{\gtdefault}
+\renewcommand{\kanjifamilydefault}{\gtdefault} % ゴシック体
+\setbeamertemplate{frametitle continuation}[from second][]
+\setbeamertemplate{caption}[numbered]
+\usefonttheme{professionalfonts}
+\setbeamertemplate{footline}[frame number]
 \usetheme[    
     block=fill, % ブロックに背景をつける
     progressbar=foot, % 各スライドの下にプログレスバー
     numbering=fraction % 合計ページ数を表示
 ]{metropolis}
 
-\title{クリーンな２次元超伝導体における量子渦にかかる力の微視的理論}
-\subtitle{Microscopic theory of force on quantum vortex in two-dimensional clean superconductors}
+\title{Microscopic theory of force on quantum vortex in two-dimensional clean superconductors}
 \author{牧野 舜}
 \institute{Hoge University}
 \date{}
@@ -42,8 +35,7 @@
     \titlepage
 \end{frame}
 
-\AtBeginSection[]
-{
+\AtBeginSection[]{
     \begin{frame}
         \frametitle{Outline}
         \tableofcontents[currentsection]
