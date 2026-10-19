@@ -1,0 +1,16 @@
+services:
+  latex:
+    image: paperist/texlive-ja:latest
+    volumes:
+      - .:/workdir
+      # luaotfload のフォントキャッシュを実行間で使い回す (無いと毎回数十秒かけて作り直す)
+      - texmf-var:/texmf-var
+    working_dir: /workdir
+    environment:
+      TEXMFVAR: /texmf-var
+    # root で実行する。非 root にすると TeX のキャッシュ先 ($HOME) が無くて luaotfload が落ちる。
+    # Docker Desktop (macOS/Windows) ではホスト側のファイル所有者は実行ユーザーになるので問題ない。
+    # Linux ホストでは out/ が root 所有になるので、必要なら user: "${UID}:${GID}" と HOME の設定を足す。
+
+volumes:
+  texmf-var:

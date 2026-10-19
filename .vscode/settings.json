@@ -7,13 +7,16 @@
         "editor.wordWrapColumn": 80,
     },
     // -------------------- latex-workshop --------------------
+    // latexmk などは Docker イメージ内で実行する (ローカルに TeX は不要)
+    "latex-workshop.docker.enabled": true,
+    "latex-workshop.docker.image.latex": "paperist/texlive-ja:latest",
     // intellisense
     "latex-workshop.intellisense.package.enabled": true,
     // viewer
     "latex-workshop.view.pdf.viewer": "tab",
     "latex-workshop.view.pdf.zoom": "page-width",
     // format and lint
-    "latex-workshop.latexindent.path": "/opt/homebrew/bin/latexindent",
+    // latexindent はローカルにある場合のみ使う (brew install latexindent)。無ければ formatOnSave は何もしない
     "latex-workshop.latexindent.args": [
         "%TMPFILE%",
         "-c=%DIR%/",
@@ -21,7 +24,7 @@
     ],
     "latex-workshop.linting.chktex.enabled": true,
     "latex-workshop.linting.lacheck.enabled": true,
-    // build
+    // build (エンジン別の設定は .latexmkrc にある)
     "latex-workshop.latex.outDir": "./out",
     "latex-workshop.latex.autoBuild.run": "never",
     "latex-workshop.latex.autoClean.run": "onFailed",
@@ -29,6 +32,7 @@
     "latex-workshop.latex.clean.command": "latexmk",
     "latex-workshop.latex.clean.args": [
         "-c",
+        "-outdir=%OUTDIR%",
         "%TEX%"
     ],
     // tools
@@ -37,19 +41,9 @@
             "name": "lualatexmk",
             "command": "latexmk",
             "args": [
-                "-e",
-                "$lualatex=q/lualatex %O -synctex=1 -interaction=nonstopmode -file-line-error %S/",
-                "-e",
-                "$bibtex=q/upbibtex %O %B/",
-                "-e",
-                "$biber=q/biber %O --bblencoding=utf8 -u -U --output_safechars %B/",
-                "-e",
-                "$makeindex=q/upmendex %O -o %D %S/",
-                "-norc",
-                "-gg",
                 "-pdflua",
-                "%DOC%",
                 "-outdir=%OUTDIR%",
+                "%DOC%"
             ],
             "env": {}
         },
@@ -57,21 +51,9 @@
             "name": "latexmk",
             "command": "latexmk",
             "args": [
-                "-e",
-                "$latex=q/uplatex %O -synctex=1 -interaction=nonstopmode -file-line-error %S/",
-                "-e",
-                "$bibtex=q/upbibtex %O %B/",
-                "-e",
-                "$biber=q/biber %O --bblencoding=utf8 -u -U --output_safechars %B/",
-                "-e",
-                "$makeindex=q/upmendex %O -o %D %S/",
-                "-e",
-                "$dvipdf=q/dvipdfmx %O -o %D %S/",
-                "-norc",
-                "-gg",
                 "-pdfdvi",
-                "%DOC%",
                 "-outdir=%OUTDIR%",
+                "%DOC%"
             ],
             "env": {}
         },
@@ -85,7 +67,7 @@
             ]
         },
         {
-            "name": "latexmk",
+            "name": "latexmk (uplatex + dvipdfmx)",
             "tools": [
                 "latexmk"
             ]
