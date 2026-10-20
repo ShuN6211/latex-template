@@ -8,10 +8,9 @@
 - [Docker](https://www.docker.com/) (Docker Compose v2 を含む)
 - [mise](https://mise.jdx.dev/) (タスクランナーとして使う。`mise tasks` で一覧)
 - (任意) [Visual Studio Code](https://code.visualstudio.com/) +
-  [LaTeX Workshop](https://github.com/James-Yu/LaTeX-Workshop)。
-  `.vscode/settings.json` で Docker モードを有効にしてあるので、拡張からのビルドもコンテナ内で行われる
-- (任意) [latexindent](https://formulae.brew.sh/formula/latexindent)。保存時の整形に使う。
-  `brew install latexindent`。無くてもビルドには影響しない
+  [LaTeX Workshop](https://github.com/James-Yu/LaTeX-Workshop) v10 以降。
+  `.vscode/settings.json` で Docker モードを有効にしてあるので、拡張からのビルドと
+  保存時の整形 (latexindent) もコンテナ内で行われる。ローカルに latexindent は不要
 
 Docker イメージは [`paperist/texlive-ja`](https://hub.docker.com/r/paperist/texlive-ja)
 (TeX Live フル + 日本語フォント) を使う。初回は数 GB のダウンロードがある。

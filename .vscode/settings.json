@@ -16,10 +16,13 @@
     "latex-workshop.view.pdf.viewer": "tab",
     "latex-workshop.view.pdf.zoom": "page-width",
     // format and lint
-    // latexindent はローカルにある場合のみ使う (brew install latexindent)。無ければ formatOnSave は何もしない
-    "latex-workshop.latexindent.args": [
+    // latexindent も Docker イメージ内のものが使われる (docker.image.latex は latexmk/synctex/latexindent に適用)。
+    // 旧 latex-workshop.latexindent.* は v10 で formatting.latexindent.* に改名された
+    "latex-workshop.formatting.latex": "latexindent",
+    "latex-workshop.formatting.latexindent.args": [
+        "-c",
+        "%DIR%/",
         "%TMPFILE%",
-        "-c=%DIR%/",
         "-y=defaultIndent: '%INDENT%'"
     ],
     "latex-workshop.linting.chktex.enabled": true,
