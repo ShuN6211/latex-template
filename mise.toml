@@ -1,0 +1,45 @@
+# mise のタスクで Docker (paperist/texlive-ja) 上の latexmk を呼ぶ。
+#
+#   mise run pdf                          # hello_world.tex を LuaLaTeX でビルド → out/
+#   mise run pdf hello_world2 --engine dvi  # upLaTeX + dvipdfmx
+#   mise run pdf slide --engine dvi
+#   mise run watch                        # 変更を監視して再ビルド
+#   mise run clean                        # out/ の中間ファイルと PDF を削除
+#   mise run shell                        # コンテナ内のシェル
+#
+# latexmk の設定は .latexmkrc にある。
+
+[tasks.pdf]
+description = "LaTeX を Docker でビルドして out/ に PDF を出す"
+usage = '''
+arg "[tex]" default="hello_world" help="拡張子なしの tex ファイル名"
+flag "--engine <engine>" default="lua" help="lua (LuaLaTeX) または dvi (upLaTeX + dvipdfmx)"
+'''
+run = '''
+case "$usage_engine" in
+  lua) mode=-pdflua ;;
+  dvi) mode=-pdfdvi ;;
+  *) echo "engine must be lua or dvi" >&2; exit 1 ;;
+esac
+docker compose run --rm latex latexmk "$mode" -outdir=out "$usage_tex.tex"
+'''
+
+[tasks.watch]
+description = "変更を監視して再ビルド"
+usage = '''
+arg "[tex]" default="hello_world"
+flag "--engine <engine>" default="lua"
+'''
+run = '''
+case "$usage_engine" in lua) mode=-pdflua ;; dvi) mode=-pdfdvi ;; esac
+docker compose run --rm latex latexmk "$mode" -outdir=out -pvc -view=none "$usage_tex.tex"
+'''
+
+[tasks.clean]
+description = "中間ファイルと PDF を削除"
+usage = 'arg "[tex]" default="hello_world"'
+run = 'docker compose run --rm latex latexmk -C -outdir=out "$usage_tex.tex"'
+
+[tasks.shell]
+description = "コンテナ内のシェル"
+run = "docker compose run --rm latex bash"

@@ -1,7 +1,8 @@
 % 日本語の文書向けのtemplate.
-% lualatexmkでbuild.
+% make pdf TEX=hello_world (LuaLaTeX) でbuild.
 \documentclass{ltjsarticle}
-\usepackage[hiragino-pron,jis2004]{luatexja-preset}
+% フォントは原ノ味 (TeX Live 同梱)。macOS のヒラギノに依存しないので Docker でも同じ出力になる
+\usepackage[haranoaji,jis2004]{luatexja-preset}
 \usepackage{amsmath, amssymb}
 \usepackage{hyperref}
 \hypersetup{setpagesize=false,
